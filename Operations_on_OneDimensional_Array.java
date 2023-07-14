@@ -135,6 +135,56 @@ public class Remove_Even_Integer {
 		System.out.println();
 	}
 
+/*Reversing an given Array */
+
+package one_Dimentional_Array;
+import java.util.Scanner;
+
+public class Reverse {
+
+	public static void main(String[] args) {
+				//array declaration and initialization
+						Scanner sc=new Scanner(System.in);
+						System.out.println("Enter Number of Array Elements");
+						int n= sc.nextInt();
+						int[] arr= new int[n];
+						
+						System.out.println("Enter Array Elements");
+						for(int i=0;i< arr.length;i++) {
+							arr[i]=sc.nextInt();
+						}
+						sc.close();
+						print(arr);
+						reverse(arr ,0,n-1);
+						System.out.println("Reverse Of An Array");
+						print(arr);
+			}
+	public static void reverse(int arr[],int start,int end) {
+		while(start<end) {
+			int temp=arr[start];
+			arr[start]=arr[end];
+			arr[end]=temp;
+			start++;
+			end--;
+		}
+	}
+			public static void print(int arr[]) {
+				//Printing array Elements
+				System.out.println("Array Elements are");
+				for(int i=0;i< arr.length;i++) {
+					System.out.print(arr[i]+" ");
+				}
+				System.out.println();
+			}
+
+	
+
+
+	}
+
+
+
+
 }
 
 
