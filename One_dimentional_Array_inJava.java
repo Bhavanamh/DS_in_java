@@ -48,4 +48,36 @@ public class Creating_An_Array {
 	}
 
 }
+/* Updating Array Elements */
+package one_Dimentional_Array;
+
+public class Creating_An_Array {
+
+	public static void main(String[] args) {
+		//array declaration and initialization
+		int[] arr= new int[5];
+		arr[0]=1;
+		arr[1]=2;
+		arr[2]=3;
+		arr[3]=4;
+		arr[4]=5;
+		//Printing array Elements
+		System.out.println("Array Elements are");
+		for(int i=0;i< arr.length;i++) {
+			System.out.print(arr[i]+" ");
+		}
+		System.out.println();
+		arr[0]=10;
+		arr[1]=9;
+		arr[2]=8;
+		arr[3]=7;
+		arr[4]=6;
+		System.out.println();
+		System.out.println("Updated Array Elements are");
+		for(int i=0;i< arr.length;i++) {
+			System.out.print(arr[i]+" ");
+	}
+
+}
+
 
