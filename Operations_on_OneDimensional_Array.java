@@ -179,5 +179,46 @@ public class Reverse {
 	}
 }
 
+/* Find Minimum Element in an Array*/
+
+package one_Dimentional_Array;
+import java.util.Scanner;
+
+public class MinElement {
+
+	public static void main(String[] args) {
+		Scanner sc =new Scanner(System.in);
+		System.out.println("Enter The number array Elements:");
+		int n=sc.nextInt();
+		System.out.println("Enter the Array Elements:");
+		int[] arr=new int[n];
+		for(int i=0;i<n;i++) {
+			arr[i]=sc.nextInt();
+		}
+		printArray(arr);
+		MinElement m=new MinElement();
+		int res=m.Min(arr);
+		System.out.println("Minimum Element in an array is:"+res);
+		sc.close();
+
+	}
+	public static void printArray(int[] arr) {
+		System.out.println("Array Elements Are:");
+		for(int i=0;i<arr.length;i++) {
+			System.out.print(arr[i]);
+		}
+		System.out.println();
+	}
+	public int Min(int arr[]) {
+		int min=arr[0];
+		for(int i=1;i<arr.length;i++) {
+			if(arr[i]<min){
+				min=arr[i];
+			}
+		}
+		return min;
+	}
+
+}
 
 
