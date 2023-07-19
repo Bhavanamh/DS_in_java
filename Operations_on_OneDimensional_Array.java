@@ -317,6 +317,84 @@ public class MoveZero {
 
 }
 
+/* Finding Missing Number in An Array */
+
+package one_Dimentional_Array;
+
+import java.util.Scanner;
+
+public class MissingNumber {
+
+	public static void main(String[] args) {
+		Scanner sc =new Scanner(System.in);
+		System.out.println("Enter The number array Elements:");
+		int n=sc.nextInt();
+		System.out.println("Enter the Array Elements:");
+		int[] arr=new int[n];
+		for(int i=0;i<n;i++) {
+			arr[i]=sc.nextInt();
+		}
+		printArray(arr);
+		MissingNumber m=new MissingNumber ();
+		int res=m.find(arr);
+		System.out.println("Missing Number is"+res);
+		sc.close();
+
+	}
+	public int find(int arr[]) {
+		int n=arr.length;
+		n++;
+		int sum=(n*(n+1))/2;
+		for(int i=0;i<arr.length;i++) {
+			sum -= arr[i];
+		}
+		return sum;
+	}
+	public static void printArray(int[] arr) {
+		System.out.println("Array Elements Are:");
+		for(int i=0;i<arr.length;i++) {
+			System.out.print(arr[i]);
+		}
+		System.out.println();
+	}
+}
+
+/*Checking wether given string is palindrome or not*/
+
+package Demo;
+
+import java.util.Scanner;
+
+public class PalindromeNumber {
+
+	public static void main(String[] args) {
+		Scanner sc =new Scanner(System.in);
+		System.out.println("Enter The string:");
+		String s=sc.nextLine();
+		boolean res=pali(s);
+		if(res==true)
+			System.out.println("The Entered string is Palindrome");
+		else
+			System.out.println("The Entered string is not Palindrome");
+		sc.close();
+	}
+	public static boolean pali(String s) {
+		char[] c=s.toCharArray();
+		int i=0;
+		int j=s.length()-1;
+		while(i<j) {
+			if(c[i]!=c[j]) {
+				return false;
+			}
+			i++;
+			j--;
+		}
+		return true;
+	}
+
+}
+
+
 
 
 
