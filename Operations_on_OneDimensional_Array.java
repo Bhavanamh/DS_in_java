@@ -272,6 +272,50 @@ public class SecondMax {
 
 /*Move All Zero to End Of An Array */
 
+package one_Dimentional_Array;
+
+import java.util.Scanner;
+
+public class MoveZero {
+
+	public static void main(String[] args) {
+		Scanner sc =new Scanner(System.in);
+		System.out.println("Enter The number array Elements:");
+		int n=sc.nextInt();
+		System.out.println("Enter the Array Elements:");
+		int[] arr=new int[n];
+		for(int i=0;i<n;i++) {
+			arr[i]=sc.nextInt();
+		}
+		printArray(arr);
+		MoveZero m=new MoveZero();
+		m.move(arr);
+		printArray(arr);
+		sc.close();
+
+	}
+	public void move(int[] arr) {
+		int j=0;
+		for(int i=0;i<arr.length;i++) {
+			if(arr[i]!=0 && arr[j]==0) {
+				int temp=arr[i];
+				arr[i]=arr[j];
+				arr[j]=temp;
+			}
+			if(arr[j]!=0) {
+				j++;
+			}
+		}
+	}
+	public static void printArray(int[] arr) {
+		System.out.println("Array Elements Are:");
+		for(int i=0;i<arr.length;i++) {
+			System.out.print(arr[i]);
+		}
+		System.out.println();
+	}
+
+}
 
 
 
