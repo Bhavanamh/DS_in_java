@@ -221,4 +221,57 @@ public class MinElement {
 
 }
 
+/*Find Second Maximum Value In An Array*/
+package one_Dimentional_Array;
+
+import java.util.Scanner;
+
+public class SecondMax {
+
+	public static void main(String[] args) {
+		Scanner sc =new Scanner(System.in);
+		System.out.println("Enter The number array Elements:");
+		int n=sc.nextInt();
+		System.out.println("Enter the Array Elements:");
+		int[] arr=new int[n];
+		for(int i=0;i<n;i++) {
+			arr[i]=sc.nextInt();
+		}
+		printArray(arr);
+		SecondMax m=new SecondMax();
+		int res=m.findSec(arr);
+		System.out.println("Second Max Value:"+res);
+		sc.close();
+
+	}
+	public static void printArray(int[] arr) {
+		System.out.println("Array Elements Are:");
+		for(int i=0;i<arr.length;i++) {
+			System.out.print(arr[i]);
+		}
+		System.out.println();
+	}
+	public int findSec(int arr[]) {
+		int f=arr[0];
+		int s=arr[0];
+		for(int i=0;i<arr.length;i++) {
+			if(arr[i]>f) {
+				s=f;
+				f=arr[i];
+			}else if(arr[i] > s && arr[i]!= f){
+				s=arr[i];
+			}
+		}
+		return s;
+		
+	}
+
+}
+
+
+
+/*Move All Zero to End Of An Array */
+
+
+
 
