@@ -94,6 +94,60 @@
 				}
 
 
+/*  
+Given a string s, containing just the characters (, ), 'T', 'T', '{' and '}', determine if the input string is valid. An input string is valid if:
+
+An input string is Valid if:
+
+Open brackets must be closed by same type of brackets.
+Open brackets must be closed in correct order.
+Example -
+Input: str = "{()}" Output: true 
+Input: str = "[]" Output: false
+Input: str = "{()" Output: false
+*/
+
+package stack;
+import java.util.*;
+public class ValidParanthesis {
+
+	public static void main(String[] args) {
+		ValidParanthesis v=new ValidParanthesis();
+		Scanner sc=new Scanner(System.in);
+		System.out.println("Enter a String");
+		String s=sc.nextLine();
+		boolean b=v.isValid(s);
+		if(b==true) {
+			System.out.println("Entered string is valid parantisis");
+		}
+		else
+			System.out.println("Entered string is not valid parantisis");
+	}
+	public boolean isValid(String s) {
+		Stack<Character> stack=new Stack<>();
+		char[]str =new char[s.length()];
+				str=s.toCharArray();
+				for(char c:str) {
+					if(c=='('||c=='{'||c=='[') {
+						stack.push(c);
+					}
+					else if(stack.isEmpty()) {
+						return false;
+					}
+					else {
+						char top=stack.peek();
+						if((c==')'&&top=='(')||(c=='}'&&top=='{')||(c==']'&&top=='[')) {
+							stack.pop();
+						}
+						else
+							return false;
+					}
+					
+				}
+				return stack.isEmpty();
+	}
+
+}
 
 
 
